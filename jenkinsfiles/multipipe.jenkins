@@ -1,1 +1,10 @@
-sh 'echo "feature branch ready."'
+pipeline {
+    agent { docker { image 'ubuntu' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'uname -a'
+            }
+        }
+    }
+}
