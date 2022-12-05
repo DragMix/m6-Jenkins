@@ -1,1 +1,15 @@
-sh 'echo "feature 2 branch checked and erady for..."'
+pipeline {
+    agent { label 'node-win' }
+    stages {
+        stage('init') {
+            steps {
+                bat 'echo "WIN NODE READY. SHOWING INFO>>>"'
+            }
+        }
+        stage('build') {
+            steps {
+                bat 'systeminfo'
+            }
+        }
+    }
+}
