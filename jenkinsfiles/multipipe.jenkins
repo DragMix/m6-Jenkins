@@ -1,1 +1,1 @@
-sh 'echo "main branch checked."'
+sh 'echo "feature branch ready."'
