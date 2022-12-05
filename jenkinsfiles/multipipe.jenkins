@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'node-win' }
     stages {
-        stage('init') {
+        stage('init2') {
             steps {
                 bat 'echo "WIN NODE READY. SHOWING INFO>>>"'
             }
