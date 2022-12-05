@@ -1,1 +1,1 @@
-sh 'echo "main branch checked."'
+sh 'echo "feature 2 branch checked and erady for..."'
