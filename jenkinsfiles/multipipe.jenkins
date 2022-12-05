@@ -1,6 +1,11 @@
 pipeline {
     agent { docker { image 'ubuntu' } }
     stages {
+        stage('init') {
+            steps {
+                sh 'echo "LINUX NODE READY. SHOW INFO>>>"'
+            }
+        }
         stage('build') {
             steps {
                 sh 'uname -a'
