@@ -4,6 +4,7 @@ pipeline {
         stage('init') {
             steps {
                 sh 'echo "LINUX NODE READY. SHOW INFO>>>"'
+                sh 'sudo apt install git'
                 sh 'git log -1'
             }
         }
