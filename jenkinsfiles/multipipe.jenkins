@@ -4,6 +4,7 @@ pipeline {
         stage('init') {
             steps {
                 sh 'echo "LINUX NODE READY. SHOW INFO>>>"'
+                sh 'git log -1'
             }
         }
         stage('build') {
