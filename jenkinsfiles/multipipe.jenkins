@@ -4,8 +4,7 @@ pipeline {
         stage('init') {
             steps {
                 sh 'echo "LINUX NODE READY. SHOW INFO>>>"'
-                def commit = sh(returnStdout: true, script: 'git log -1 --pretty=%B | cat')
-                sh 'git log -1 --pretty=%B | cat'
+                sh 'git log -1 --pretty=%B'
                 
             }
         }
