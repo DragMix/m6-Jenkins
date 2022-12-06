@@ -13,16 +13,17 @@ pipeline {
         }
         stage('check_msg') {
             steps {
-                sh """#!/bin/sh
-                set -e
-                COMMIT_MSG = $(git log -1 --pretty=%B)
-                COMMIT_LEN = $(#COMMIT_MSG)
-                if [ $COMMIT_LEN -lt 50 ] $$ [ $COMMIT_MSG =~ [A-Z]{2,}-[0-9]{1,} ]; then 
-                    echo "Commit message fine."
-                else    
-                    echo "Bad commit message!"
-                fi
-                """
+                sh '''#!/bin/bash
+                 echo "hello world" 
+                 set -e
+                 COMMIT_MSG = $(git log -1 --pretty=%B)
+                 COMMIT_LEN = $(#COMMIT_MSG)
+                 if [ $COMMIT_LEN -lt 50 ] $$ [ $COMMIT_MSG =~ [A-Z]{2,}-[0-9]{1,} ]; then 
+                  echo "Commit message fine."
+                 else    
+                  echo "Bad commit message!"
+                 fi
+                '''
             }
         }
         stage('init') {
