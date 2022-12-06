@@ -25,7 +25,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'hadolint dockerfiles/* | tee -a lint_result.txt'
+                sh 'hadolintu dockerfiles/* | tee -a lint_result.txt'
             }
             post {
                 always {
