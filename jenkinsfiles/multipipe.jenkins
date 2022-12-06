@@ -22,10 +22,8 @@ pipeline {
                 '''
             }
         }
-    }    
-    agent { docker { image 'hadolint/hadolint' } }
-    stages {
         stage('Lint dockerfile') {
+            agent { docker { image 'hadolint/hadolint' } }
             steps {
                 sh 'hadolint dockerfiles/Dockerfile -f tty > lint_result.txt'
                 sh 'cat lint_result.txt'
