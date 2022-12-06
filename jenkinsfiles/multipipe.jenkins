@@ -25,11 +25,11 @@ pipeline {
                 }
             }
             steps {
-                sh 'hadolint dockerfiles/* | tee -a hadolint_lint.txt'
+                sh 'hadolint dockerfiles/* | tee -a lint_result.txt'
             }
             post {
                 always {
-                    archiveArtifacts 'hadolint_lint.txt'
+                    archiveArtifacts 'lint_result.txt'
                 }
             }
         }
