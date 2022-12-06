@@ -27,7 +27,7 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                 set -eux
-                hadolintu dockerfiles/* | tee -a lint_result.txt
+                hadolint dockerfiles/* | tee -a lint_result.txt
                 '''
             }
             post {
