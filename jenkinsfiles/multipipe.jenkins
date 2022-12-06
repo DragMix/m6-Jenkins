@@ -1,13 +1,8 @@
 pipeline {
-    agent { docker { image 'bitnami/git:latest' } }
+    agent none
     stages {
-        stage('System Info') {
-            steps {
-                sh 'echo "LINUX NODE READY. SHOW INFO>>>"'
-                sh 'uname -a'
-            }
-        }
         stage('Check commit message') {
+            agent { docker { image 'bitnami/git:latest' } }
             steps {
                 sh '''#!/bin/bash
                  set -eux
