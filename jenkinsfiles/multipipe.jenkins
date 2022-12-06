@@ -1,17 +1,13 @@
 pipeline {
     agent { docker { image 'bitnami/git:latest' } }
     stages {
-        stage('init') {
+        stage('System Info') {
             steps {
                 sh 'echo "LINUX NODE READY. SHOW INFO>>>"'
-            }
-        }
-        stage('sysinfo') {
-            steps {
                 sh 'uname -a'
             }
         }
-        stage('check_msg') {
+        stage('Check commit message') {
             steps {
                 sh '''#!/bin/bash
                  set -eux
@@ -24,6 +20,14 @@ pipeline {
                   echo "Bad commit message!"
                  fi
                 '''
+            }
+        }
+    agent { docker { image 'hadolint/hadolint' } }
+    stages {
+        stage('Lint dockerfile') {
+            steps {
+                sh 'hadolint dockerfiles/Dockerfile -f tty > lint_result.txt'
+                sh 'cat lint_result.txt'
             }
         }
     }
