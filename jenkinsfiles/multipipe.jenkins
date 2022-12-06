@@ -26,15 +26,5 @@ pipeline {
                 '''
             }
         }
-        stage('init') {
-            steps {
-                sh 'echo "LINUX NODE READY. SHOW INFO>>>"'
-            }
-        }
-        stage('init') {
-            steps {
-                sh 'echo "LINUX NODE READY. SHOW INFO>>>"'
-            }
-        }
     }
 }
